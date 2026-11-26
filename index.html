@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NATE STYLE | متجر ومكتبة مشاريع المونتاج</title>
+    <title>CYBOX EDITS | Professional Presets & Project Files</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
@@ -12,24 +12,30 @@
     <!-- الهيدر العلوي -->
     <header>
         <div class="container nav-container">
-            <div class="logo">NATE<span>EDITS</span></div>
-            <nav>
-                <a href="#library">المكتبة</a>
-                <a href="#how-to">طريقة الاستخدام</a>
-                <a href="https://tiktok.com" target="_blank" class="tiktok-btn">حساب التيك توك</a>
+            <div class="logo">CY<span>BOX</span></div>
+            <nav class="nav-links">
+                <a href="#library" data-lang="nav_library">المكتبة</a>
+                <a href="#tutorials" data-lang="nav_tutorials">دروس التعليم</a>
+                <a href="#request" data-lang="nav_request">اطلب مشروع</a>
+                <a href="https://www.tiktok.com/@cybox43" target="_blank" class="tiktok-btn">
+                    <span data-lang="nav_tiktok">حساب التيك توك</span>
+                </a>
             </nav>
+            <div class="lang-switch">
+                <button id="langToggleBtn" onclick="toggleLanguage()">EN / AR</button>
+            </div>
         </div>
     </header>
 
     <!-- القسم الترحيبي -->
     <section class="hero">
         <div class="container">
-            <h1>مكتبة مشاريع وبريسيتس <span class="highlight">Nate Style</span></h1>
-            <p>حمّل ملفات المشاريع الجاهزة (Project Files)، فلاتر التلوين (CCs)، والـ Shakes وافتحها مباشرة في برنامجك لتتعلم الاحتراف.</p>
+            <h1 data-lang="hero_title">مكتبة مشاريع وبريسيتس الاحترافية <span class="highlight">CYBOX</span></h1>
+            <p data-lang="hero_desc">كل ما تحتاجه لإتقان ستايل الإيديت السريع، فلاتر التلوين الحادة، والاهتزازات القوية. حمّل وتعلم مباشرة!</p>
             
             <!-- شريط البحث -->
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="ابحث عن: Shake, Dark CC, Breaking Bad, Velocity...">
+                <input type="text" id="searchInput" placeholder="ابحث عن: Project, Shake, CC, Velocity...">
             </div>
         </div>
     </section>
@@ -37,50 +43,47 @@
     <!-- قسم الفلاتر والمشاريع -->
     <section id="library" class="library-section">
         <div class="container">
-            <!-- أزرار الفلترة -->
             <div class="filters">
-                <button class="filter-btn active" data-filter="all">الكل</button>
-                <button class="filter-btn" data-filter="project">Project Files</button>
-                <button class="filter-btn" data-filter="cc">Color Correction (CC)</button>
-                <button class="filter-btn" data-filter="shakes">Shakes & Transitions</button>
-                <button class="filter-btn" data-filter="sfx">Sound Effects</button>
+                <button class="filter-btn active" data-filter="all" data-lang="filter_all">الكل</button>
+                <button class="filter-btn" data-filter="project" data-lang="filter_project">Project Files</button>
+                <button class="filter-btn" data-filter="cc" data-lang="filter_cc">Color Correction (CC)</button>
+                <button class="filter-btn" data-filter="shakes" data-lang="filter_shakes">Shakes & Transitions</button>
+                <button class="filter-btn" data-filter="sfx" data-lang="filter_sfx">Sound Effects</button>
             </div>
 
             <!-- شبكة عرض العناصر -->
-            <div class="grid" id="itemsGrid">
-                <!-- يتم تعبئة الكروت تلقائياً من ملف script.js -->
+            <div class="grid" id="itemsGrid"></div>
+        </div>
+    </section>
+
+    <!-- قسم الدروس التعليمية (لرفع قيمة الموقع وزيادة التفاعل) -->
+    <section id="tutorials" class="tutorials-section">
+        <div class="container">
+            <h2 data-lang="tut_title">تعلّم سر الستايل (الدروس والشروحات)</h2>
+            <p data-lang="tut_desc">فيديوهات قصيرة تشرح لك إزاي تطبق التايمينج والتلحين الصح في إيديتك.</p>
+            <div class="tutorials-grid" id="tutorialsGrid">
+                <!-- يتم تعبئتها من ملف script.js -->
             </div>
         </div>
     </section>
 
-    <!-- قسم طريقة الاستخدام -->
-    <section id="how-to" class="how-to-section">
-        <div class="container">
-            <h2>إزاي تستخدم الملفات؟</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <span class="step-num">01</span>
-                    <h3>اختار وحمّل</h3>
-                    <p>دور على التأثير أو المشروع اللي عجبك وتأكد إنه متوافق مع برنامجك واضغط تحميل.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">02</span>
-                    <h3>فك الضغط</h3>
-                    <p>لو الملف مضغوط بصيغة ZIP، فك الضغط عنه عشان تلاقي ملف المشروع والملحقات.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">03</span>
-                    <h3>افتح واتعلم</h3>
-                    <p>افتح الملف في برنامجك، وشوف طبقات الـ Keyframes والإعدادات عشان تطبقها في شغلك.</p>
-                </div>
+    <!-- قسم طلب مشروع خاص -->
+    <section id="request" class="request-section">
+        <div class="container request-box-container">
+            <h2 data-lang="req_title">مش لاقي التأثير أو المشروع اللي دور عليه؟</h2>
+            <p data-lang="req_desc">ابعت اسم المسلسل أو الأنمي أو ستايل الإيديت، وهنضيفه في التحديث الجاي!</p>
+            <div class="request-form">
+                <input type="text" id="reqInput" placeholder="اكتب طلبك هنا (مثلاً: Eren Yeager Velocity Preset)...">
+                <button onclick="sendRequest()" data-lang="req_btn">إرسال الطلب لـ Cybox</button>
             </div>
+            <p id="reqMessage" style="margin-top: 10px; color: var(--accent); font-weight: 600;"></p>
         </div>
     </section>
 
     <!-- الفوتر -->
     <footer>
         <div class="container">
-            <p>جميع الحقوق محفوظة &copy; 2026 | تم التصميم لمجتمع الإيديتورز</p>
+            <p data-lang="footer_text">جميع الحقوق محفوظة &copy; 2026 CYBOX EDITS | Built for Editors</p>
         </div>
     </footer>
 
